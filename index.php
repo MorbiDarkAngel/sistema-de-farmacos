@@ -10,18 +10,18 @@
 <body>
 <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="indexbootstrap.php">Consulta simples de interações</a>
+                    <a class="nav-link active" aria-current="page" href="index.php">Consulta simples de interações</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.php">Login / Novo Cadastro</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="saibamais.php">Saiba mais</a>
+                    <a class="nav-link" href="logoff.php">Sair agora</a>
                 </li>
                 
             </ul>
 
-<form action="indexbootstrap.php?botao=gravar" method="post" name="form1">
+<form action="index.php?botao=gravar" method="post" name="form1">
 <table width="95%" height="12%" border="4" align="center">
   <tr bgcolor="lightblue">
     <td colspan=5 align="center">CONSULTA DE INTERAÇÕES MEDICAMENTOSAS</td>
@@ -59,12 +59,6 @@
 	$query .= " ORDER by id_classe";
 	$result = mysqli_query($con, $query);
 
-/*	
-	echo "<pre>";
-	echo $query;
-	echo mysql_error();
-	echo "</pre>";
-*/
 	while ($coluna=mysqli_fetch_array($result)) 
 	{
 		
