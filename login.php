@@ -13,7 +13,7 @@
   <div class="main-login">
     <div class="left-login">
       <h1>Faça seu login<br>E registre suas consultas</h1>
-      <img src="imagem.svg" alt="imagem">
+      <img src="imagem.svg" class="imagem" alt="imagem">
     </div>
     <div class="right-login">
       <div class="card-login">
