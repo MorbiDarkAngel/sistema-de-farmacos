@@ -2,29 +2,44 @@
 <head>
 <title>Interação Medicamentosa</title>
 <meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 <?php include ('config.php');  ?>
 </head>
 
 <body>
+<ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="indexbootstrap.php">Consulta simples de interações</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php">Login / Novo Cadastro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="saibamais.php">Saiba mais</a>
+                </li>
+                
+            </ul>
 
-<form action="index.php?botao=gravar" method="post" name="form1">
-<table width="95%" height="12%" border="1" align="center">
-  <tr bgcolor="skyblue">
+<form action="indexbootstrap.php?botao=gravar" method="post" name="form1">
+<table width="95%" height="12%" border="4" align="center">
+  <tr bgcolor="lightblue">
     <td colspan=5 align="center">CONSULTA DE INTERAÇÕES MEDICAMENTOSAS</td>
   </tr>
   <tr>
-  <tr>
+  <tr align="center">
     <td width="17%" align="center">Digite o nome do medicamento: </td>
-    <td width="26%" align="center"><input type="text" name="nome_medicamento"  /></td>
-    <td width="21%" align="center"><input type="submit" name="botao" value="Consultar" /></td>
+    <td width="45%" align="center"><input type="text" name="nome_medicamento" width="" /></td>
+
+    <td width="21%" align="center"><input type="submit"  name="botao" value="Consultar" /></td>
   </tr>
 </table>
 </form>
 
 <?php if (@$_REQUEST['botao'] == "Consultar") { ?>
 
-<table width="95%" border="1" align="center">
-  <tr bgcolor="skyblue ">
+<table width="95%" border="4" align="center">
+  <tr bgcolor="lightblue ">
     <th width="6%">Classe medicamento: </th>
     <th width="15%">Nome do Medicamento:</th>
     <th width="20%">Interação medicamentosa: </th>
