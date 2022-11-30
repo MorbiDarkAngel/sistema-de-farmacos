@@ -48,6 +48,13 @@ main .social-media a:first-child img {
 	margin-left: 0;
 }
 
+main .alternative {
+	margin-top: 1rem;
+}
+
+main .alternative span {
+	margin-top: 1rem;
+}
 
 main form {
 	display: flex;

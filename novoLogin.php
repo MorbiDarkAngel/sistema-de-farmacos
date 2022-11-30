@@ -14,12 +14,12 @@
   <main>
     <h1>Criar conta</h1>
     <div class="social-media">
-    <a href="#">
-      <img src="assets/pills.png" alt="pills">
-    </a>
-      <div class="alternative">
-        <span></span>
-      </div>
+      <a href="#">
+        <img src="assets/pills.png" alt="pills">
+      </a>
+        <div class="alternative">
+          <span></span>
+        </div> 
 
       <form action=""> 
         <label for="name">
@@ -41,11 +41,11 @@
           <input type="text" id="login" name="login">
         </label>
 
-        <input typ="submit" value="sign up">
+        <input type="submit" value="sign up">
       </form> 
     </main>
     <section class="images">
-      <img src="assets/mobile.png" alt="mobile">
+      <img src="assets/mobile.csv" alt="mobile">
       <div class="circle"></div>
     </section>
 </body>
