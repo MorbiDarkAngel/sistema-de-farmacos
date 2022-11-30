@@ -47,28 +47,7 @@ if (@$_REQUEST['botao'] == "Gravar")
         
         else echo "<script>alert('Cadastro não realizado');top.location.href=cadastroUsuario.php';</script>"; 
         
-    } else  
-    {
-        gravarLog ($id_usuario, $nome_usuario, $data, 'atualizou');
-
-        $insere = "UPDATE usuario SET 1
-                tipo = '{$_POST['tipo']}'
-                    , nome_usuario = '{$_POST['nome_usuario']}'
-                    , email = '{$_POST['email']}'
-                    , criptografada = '{$_POST['senha']}'
-                    , tipo = '{$_POST['tipo']}'
-                    , email = '{$_POST['email']}'
-                    , login = '{$_POST['login']}'
-                    
-
-                    WHERE id_usuario = '{$_REQUEST['id_usuario']}'
-                ";
-        $result_update = mysqli_query($con, $insere);
-
-        if ($result_update) echo "<h2> Registro atualizado</h2>";
-        else echo "<h2>Registro não atualizado</h2>";
-        
-    }
+    } 
 }
 ?>
 
