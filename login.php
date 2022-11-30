@@ -20,8 +20,8 @@ if (@$_REQUEST['botao']=="Entrar")
      $criptografada = base64_encode($senha);
   
   $decriptografada = base64_decode($criptografada);
- // echo "Linha 24 criptografada::::: \n $criptografada";
-  //echo "Linha 25 decriptografada::::: \n $decriptografada";
+   // echo "Linha 24 criptografada::::: \n $criptografada";
+  // echo "Linha 25 decriptografada::::: \n $decriptografada";
 
   $query = "SELECT * FROM usuario WHERE login = '$login' AND senha = '$criptografada' ";
   $result = mysqli_query($con, $query);
@@ -69,7 +69,7 @@ if (@$_REQUEST['botao']=="Entrar")
         </div>
          <input class="btn-login" type=submit name=botao value=Entrar>
       </form>
-      <button class="btn-login" type=submit name=botao href="novoLogin.php">  <a class="nav-link active" aria-current="page" href="novoLogin.php">Novo Login</a></button>
+      <button class="btn-login" type=submit name=botao href="cadastroUsuario.php">  <a class="nav-link active" aria-current="page" href="cadastroUsuario.php">Novo Login</a></button>
       </div>
     </div>
   </div>
