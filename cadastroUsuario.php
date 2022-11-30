@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <title>Interação Medicamentosa</title>
+  <title>Cadastro novo usuário</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" contento="IE-edge">
   <meta name=viewport content="width-device-width, initial=scale=1.0">
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <main>
+<main>
 <?php
 include('funcao.php');
 $id_usuario = @$_REQUEST['id_usuario'];

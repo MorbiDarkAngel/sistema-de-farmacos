@@ -1,13 +1,17 @@
 <html>
 <head>
-<title>Interação Medicamentosa</title>
-<meta charset="UTF-8">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<title>Cadastro novo usuário</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" contento="IE-edge">
+  <meta name=viewport content="width-device-width, initial=scale=1.0">
+  <link rel="stylesheet" href="style2.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-<?php include ('config.php');  ?>
+  <?php include ('config.php');  ?>
 </head>
 
 <body>
+  <main>
 <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.php">Consulta simples de interações</a>
@@ -35,7 +39,7 @@
   </tr>
 </table>
 </form>
-
+</main>
 <?php if (@$_REQUEST['botao'] == "Consultar") { ?>
 
 <table width="95%" border="4" align="center">
