@@ -7,60 +7,57 @@
   <meta name=viewport content="width-device-width, initial=scale=1.0">
   <link rel="stylesheet" href="style2.css">
 
-  <?php include ('config.php');  ?>
+  <?php include ('config.php');  
+    // include('verifica.php')
+  ?>
 </head>
 
 <body>
-<main>
-<?php
+    <main>
+        <?php
 include('funcao.php');
-$id_usuario = @$_REQUEST['id_usuario'];
-
-if (@$_REQUEST['id_usuario'] and !$_REQUEST['botao'])
-{
-
-    gravarLog ($id_log,date("Y-m-d",time()),$id_usuario, 'criou');
-    $query = "
-        SELECT * FROM usuario WHERE id_usuario='{$_REQUEST['id_usuario']}'
-    ";
-    $result = mysqli_query($con, $query);
-    $row = mysqli_fetch_assoc($result);
-    //echo "<br> $query";   
-    foreach( $row as $key => $value )
-    {
-        $_POST[$key] = $value;
-    }
-}
 
 if (@$_REQUEST['botao'] == "Gravar") 
 {
-    if (!$_REQUEST['id_usuario'])
+    if (!$_REQUEST['id_classe'])
     {
-        $criptografada = base64_encode($_POST['criptografada']);
-        $insere = "INSERT into usuario (nome_usuario,senha,tipo, email, login) VALUES 
-        ('{$_POST['nome_usuario']}', '$criptografada', '{$_POST['tipo']}', '{$_POST['email']}','{$_POST['login']}')";
+         $insere = "INSERT into classe (nome_classe, nome_medicamento, interacao_com, tipo_interacao) VALUES 
+          ('{$_POST['nome_classe']}', '{$_POST['nome_medicamento']}','{$_POST['interacao_com']}','{$_POST['tipo_interacao']}')";
+            
+            $result_insere = mysqli_query($con, $insere);
+            if ($result_insere) {
+                echo  "<script>alert('Novo medicamento inserido');</script>"; 
+                header('location: index.php');
+            }
         // echo $insere;
         $result_insere = mysqli_query($con, $insere);
 
         
-        if ($result_insere)echo "<script>alert('Cadastro Realizado');top.location.href='login.php';</script>";
+        if ($result_insere)
+            {
+                echo "<script>alert('Novo fármaco cadastrado');
+                top.location.href='novoCadastroFarmaco.php';</script>";
+            }
         
-        else echo "<script>alert('Cadastro não realizado');top.location.href=cadastroUsuario.php';</script>"; 
+        else {
+            echo "<script>alert('Cadastro não realizado');
+            top.location.href=novoCadastroFarmaco.php';</script>"; 
+        }
         
     } 
 }
 ?>
 
-    <h1>Criar conta</h1>
+    <h1>Cadastrar novo medicamento</h1>
     <div class="social-media">
       <a href="#">
-        <img src="assets/assistant.png" alt="assistant">
+        <img src="assets/pills.png" alt="pills">
       </a>
         <div class="alternative">
           <span></span>
         </div> 
 
-      <form action="cadastroUsuario.php" method="post" name="cadastroUsuario"> 
+      <form action="novoCadastroFarmaco.php" method="post" name="novoCadastroFarmaco"> 
         <label for="name">
           <span>Nome</span>
           <input type="text" id="name" required name="nome_usuario">
@@ -85,11 +82,11 @@ if (@$_REQUEST['botao'] == "Gravar")
 
 
          <input type="submit" value="Gravar" name="botao" />
-                    <input type="hidden" name="id_usuario" value="<?php echo @$_REQUEST['id_usuario'] ?>" />
+                    <input type="hidden" name="id_classe" value="<?php echo @$_REQUEST['id_classe'] ?>" />
       </form> 
     </main>
     <section class="images">
-      <img src="assets/medical.png" alt="medical">
+      <img src="assets/seringa.png" alt="seringa">
       <div class="circle"></div>
     </section>
 </body>
