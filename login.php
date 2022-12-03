@@ -25,7 +25,7 @@ if (@$_REQUEST['botao']=="Entrar")
 
   $query = "SELECT * FROM usuario WHERE login = '$login' AND senha = '$criptografada' ";
   $result = mysqli_query($con, $query);
-  echo "\nFora do While";
+  // echo "\nFora do While";
   while ($coluna=mysqli_fetch_array($result)) 
   {
     echo "Entrou no While";
