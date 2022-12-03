@@ -59,27 +59,23 @@ if (@$_REQUEST['botao'] == "Gravar")
 
       <form action="novoCadastroFarmaco.php" method="post" name="novoCadastroFarmaco"> 
         <label for="name">
-          <span>Nome</span>
-          <input type="text" id="name" required name="nome_usuario">
+          <span>Classe do medicamento</span>
+          <input type="text" id="classe" required name="classe">
         </label>
 
-        <label for="email">
-          <span>E-mail</span>
-          <input type="email" id="email" required name="email">
+        <label for="nome_medicamento">
+          <span>Nome do Medicamento</span>
+          <input type="text" id="nome_medicamento" required name="nome_medicamento">
         </label>
-        <label for="password">
-          <span>Senha</span>
-          <input type="password" required id="password " name="criptografada">
+        <label for="interacao_com">
+          <span>Faz interação com</span>
+          <input type="text" required id="interacao_com " name="interacao_com">
         </label>
 
-        <label for="login">
-          <span>Login</span>
-          <input type="text" id="login" required name="login">
+        <label for="tipo_interacao">
+          <span>Tipo de interação</span>
+          <input type="text" id="tipo_interacao" required name="tipo_interacao">
         </label>
-         <tr>
-            <td><input type="hidden" name="tipo" value="USER">
-         </tr>
-
 
          <input type="submit" value="Gravar" name="botao" />
                     <input type="hidden" name="id_classe" value="<?php echo @$_REQUEST['id_classe'] ?>" />
