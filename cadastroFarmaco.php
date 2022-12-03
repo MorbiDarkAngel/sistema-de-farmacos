@@ -1,119 +1,89 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-    </script>
-    <title>Cadastrar Produto</title>
-    <?php include ('config.php');  
-        include('verifica.php')
-        ?>
+  <title>Cadastro novo usuário</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" contento="IE-edge">
+  <meta name=viewport content="width-device-width, initial=scale=1.0">
+  <link rel="stylesheet" href="style2.css">
+
+  <?php include ('config.php');  
+    include('verifica.php')
+  ?>
 </head>
 
 <body>
-    <?php
-        $sql = "Select * from produto where id_produto > 0";
-        $result = mysqli_query($con, $sql);
+    <main>
+        <?php
+include('funcao.php');
 
-        ?>
-    <nav>
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.php"> X</a>
-            </li>
-
-
-        </ul>
-    </nav>
-    <?php
-    include('funcao.php');
-    $id_usuario = @$_REQUEST['id_produto'];
-    if (@$_REQUEST['botao'] == "Gravar") 
+if (@$_REQUEST['botao'] == "Gravar") 
+{
+    if (!$_REQUEST['id_classe'])
     {
-        if (!@$_REQUEST['id_produto'])
-        {
-
-          $insere = "INSERT into classe (nome_classe, nome_medicamento, interacao_com, tipo_interacao) VALUES 
-          ('{$_POST['nome_classe']}', '{$_POST['nome_medicamento']}','{$_POST['interacao_com']}','{$_POST['tipo_interacao']}'x')";
+         $insere = "INSERT into classe (nome_classe, nome_medicamento, interacao_com, tipo_interacao) VALUES 
+          ('{$_POST['nome_classe']}', '{$_POST['nome_medicamento']}','{$_POST['interacao_com']}','{$_POST['tipo_interacao']}')";
             
-		    $result_insere = mysqli_query($con, $insere);
+            $result_insere = mysqli_query($con, $insere);
             if ($result_insere) {
                 echo  "<script>alert('Novo medicamento inserido');</script>"; 
                 header('location: index.php');
             }
-            
+        // echo $insere;
+        $result_insere = mysqli_query($con, $insere);
+
+        
+        if ($result_insere)
+            {
+                echo "<script>alert('Novo fármaco cadastrado');
+                top.location.href='cadastroFarmaco.php';</script>";
+            }
+        
+        else {
+            echo "<script>alert('Cadastro não realizado');
+            top.location.href=cadastroFarmaco.php';</script>"; 
         }
-    }
-    ?>
-    <form action="cadastroFarmaco.php" method="post" name="classe">
-        <div><?php echo @$_POST['id_classe']; ?>&nbsp;</div>
+        
+    } 
+}
+?>
 
+    <h1>Cadastrar novo medicamento</h1>
+    <div class="social-media">
+      <a href="#">
+        <img src="assets/pills.png" alt="pills">
+      </a>
+        <div class="alternative">
+          <span></span>
+        </div> 
 
-        <div class="mb-3">
-            <label for="nome_classe" class="form-label">Nome do produto</label>
-            <input type="text" name="nome_classe" class="form-control" id="nome_classe" aria-describedby="emailHelp"
-                value="<?php echo @$_POST['nome_classe']; ?>" required>
-        </div>
-        <div class="mb-3">
-            <label for="valor" class="form-label">Valor</label>
-            <input type="number" value="<?php echo @$_POST['preco']; ?>" step="0.01" name="preco" min="0.01"
-                class="form-control" id="valor">
-        </div>
-        <div class="mb-3">
-            <label for="descricao" class="form-label">Descrição</label>
-            <textarea name="descricao" class="form-control" id="descricao" maxlength="220" cols="80"
-                rows="10"></textarea>
-        </div>
-        <tr>
+      <form action="cadastroFarmaco.php" method="post" name="cadastroFarmaco"> 
+        <label for="name">
+          <span>Classe do medicamento</span>
+          <input type="text" id="classe" required name="classe">
+        </label>
 
-            <div><?php echo @$_POST['categoria_fk']; ?>&nbsp;</div>
+        <label for="nome_medicamento">
+          <span>Nome do Medicamento</span>
+          <input type="text" id="nome_medicamento" required name="nome_medicamento">
+        </label>
+        <label for="interacao_com">
+          <span>Faz interação com</span>
+          <input type="text" required id="interacao_com " name="interacao_com">
+        </label>
 
-        <tr>
-            <div>
-                <td>Categoria:</td>
-                <td>
-                    <select type="text" name="categoria" value="<?php echo @$_POST['categoria']; ?>">
-                        <?php 
-	$result_tipos = "SELECT * FROM categoria";
-	$resultado_tipos = mysqli_query($con, $result_tipos);
-	while($row_tipos = mysqli_fetch_assoc($resultado_tipos)) { ?>
-                        <option value="<?php echo $row_tipos[ 'nome_categoria']; ?>">
-                            <?php echo $row_tipos['nome_categoria']; ?>
-                        </option> <?php 
-	}
-	?>
-                    </select><br><br>
-        </tr>
+        <label for="tipo_interacao">
+          <span>Tipo de interação</span>
+          <input type="text" id="tipo_interacao" required name="tipo_interacao">
+        </label>
 
-
-
-
-        <div>
-            <td>Status:</td>
-            <td name="estado" value="<?php echo @$_POST['estado']; ?>">
-
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" checked value="0" name="estado" id="flexRadioDefault1">
-                    <label class="form-check-label" value='0'> Pendente </label>
-                </div>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" checked value="<?php echo $_SESSION["id_usuario"]; ?>"
-                name="criador_fk" id="flexRadioDefault1">
-            <label class="form-check-label"> <?php echo $_SESSION["id_usuario"]; ?> </label>
-        </div>
-        <input type="submit" value="Gravar" name="botao" class="btn btn-primary">
-        <input type="hidden" name="id_usuario" value="<?php echo @$_REQUEST['id_usuario'] ?>" />
-
-
-
-
-    </form>
-
-
-
+         <input type="submit" value="Gravar" name="botao" />
+                    <input type="hidden" name="id_classe" value="<?php echo @$_REQUEST['id_classe'] ?>" />
+      </form> 
+    </main>
+    <section class="images">
+      <img src="assets/seringa.png" alt="seringa">
+      <div class="circle"></div>
+    </section>
 </body>
-
 </html>
