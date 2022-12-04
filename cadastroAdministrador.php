@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <title>Cadastro novo usuário</title>
+  <title>Novo Administrador</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" contento="IE-edge">
   <meta name=viewport content="width-device-width, initial=scale=1.0">
@@ -59,9 +59,11 @@ if (@$_REQUEST['botao'] == "Gravar")
       <a href="#">
         <img src="assets/crow.png" alt="crow">
       </a>
+       </div>
         <div class="alternative">
-          <span></span>
-        </div> 
+          <span>* * *</span>
+        </div>
+      
 
       <form action="cadastroAdministrador.php" method="post" name="cadastroAdministrador"> 
         <label for="name">

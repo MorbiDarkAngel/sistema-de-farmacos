@@ -18,8 +18,6 @@ $id_usuario = @$_REQUEST['id_usuario'];
 
 if (@$_REQUEST['id_usuario'] and !$_REQUEST['botao'])
 {
-
-    gravarLog ($id_log,date("Y-m-d",time()),$id_usuario, 'criou');
     $query = "
         SELECT * FROM usuario WHERE id_usuario='{$_REQUEST['id_usuario']}'
     ";
@@ -54,10 +52,17 @@ if (@$_REQUEST['botao'] == "Gravar")
     <h1>Criar conta</h1>
     <div class="social-media">
       <a href="#">
+        <img src="">
+      </a>
+      <a href="#">
         <img src="assets/assistant.png" alt="assistant">
       </a>
+       <a href="#">
+        <img src="">
+      </a>
+    </div>
         <div class="alternative">
-          <span></span>
+          <span>* * *</span>
         </div> 
 
       <form action="cadastroUsuario.php" method="post" name="cadastroUsuario"> 

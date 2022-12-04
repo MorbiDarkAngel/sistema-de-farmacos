@@ -28,7 +28,7 @@ if (@$_REQUEST['botao']=="Entrar")
   // echo "\nFora do While";
   while ($coluna=mysqli_fetch_array($result)) 
   {
-    echo "Entrou no While";
+   // echo "Entrou no While";
     
     $_SESSION["id_usuario"]= $coluna["id_usuario"]; 
     $_SESSION["login"] = $coluna["login"]; 
@@ -52,7 +52,8 @@ if (@$_REQUEST['botao']=="Entrar")
   <div class="main-login">
     <div class="left-login">
       <h1>Faça seu login<br>E registre suas consultas</h1>
-      <img src="imagem.svg" class="imagem" alt="imagem">
+
+      <img src="assets/Blood.png" class="imagem" alt="Blood">
     </div>
     <div class="right-login">
       <div class="card-login">
@@ -71,6 +72,7 @@ if (@$_REQUEST['botao']=="Entrar")
       </form>
       <button class="btn-login" type=submit name=botao href="cadastroUsuario.php">  <a class="nav-link active" aria-current="page" href="cadastroUsuario.php">Novo Login</a></button>
       </div>
+      <button class="btn-login" type=submit name=botao href="cadastroUsuario.php">  <a class="nav-link active" aria-current="page" href="index.php">Página de consultas</a></button>
     </div>
   </div>
 </div>
