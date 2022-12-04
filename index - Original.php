@@ -1,35 +1,40 @@
 <html>
 <head>
-<title>Bem vindo ao nossos Sistema</title>
+<title>Cadastro novo usuário</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" contento="IE-edge">
   <meta name=viewport content="width-device-width, initial=scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  
+  <link rel="stylesheet" href="style2.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
   <?php include ('config.php');  ?>
 </head>
 
 <body>
- <main>
-  <h1 class="card-login"><p>Consulta simples de interações</h1>
-    <a class="btn-login" href="login.php">Login / Novo Cadastro</a>
-                <br><br><br>
-                <a class="btn-login" href="logoff.php">Sair agora</a>
-                <br><br><br>
+  <main>
+<ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.php">Consulta simples de interações</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php">Login / Novo Cadastro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logoff.php">Sair agora</a>
+                </li>
+                
+            </ul>
 
 <form action="index.php?botao=gravar" method="post" name="form1">
-<table width="95%" height="33%" border="4" align="center">
-
-  <tr bgcolor="paleturquoise">
-    <td colspan=5 align="center"> <h1><b>CONSULTA DE INTERAÇÕES MEDICAMENTOSAS</b> </h1> </td>
+<table width="95%" height="12%" border="4" align="center">
+  <tr bgcolor="forestgreen">
+    <td colspan=5 align="center"> <b>CONSULTA DE INTERAÇÕES MEDICAMENTOSAS</b>  </td>
   </tr>
-
   <tr>
   <tr align="center">
-
-    <td width="17%" class="" align="center"><b>Digite o nome do medicamento: </b></td>
+    <td width="17%" align="center">Digite o nome do medicamento: </td>
     <td width="45%" align="center"><input type="text" name="nome_medicamento" width="" /></td>
+
     <td width="21%" align="center"><input type="submit"  name="botao" value="Consultar" /></td>
   </tr>
 </table>

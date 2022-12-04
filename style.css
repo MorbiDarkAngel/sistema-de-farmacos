@@ -3,16 +3,22 @@
 body {
 	margin: 0;
 	font-family: 'Raleway', sans-serif;
+	background-color: #9370DB;
 }
 
 body * {
 	box-sizing: border-box;
+
 }
+.main{
+	
+}
+
 
 .main-login{
 	width: 100vw;
 	height: 100vh;
-	background: #008080;
+	background: #EEE8AA;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -29,8 +35,8 @@ body * {
 
 .left-login > h1 {
 	font-size: 3vw;
-	color:#000000;
-	}
+	color:#EEE8AA;
+}
 
 .imagem{
 
@@ -92,7 +98,7 @@ body * {
 	margin-bottom: 10px;
 }
 
-.textfiled > input::placeholder {
+.textfield > input::placeholder {
 	color: #000000;
 	
 }
