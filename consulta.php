@@ -62,11 +62,16 @@
                 <div class="col-sm">
                     <button type="submit" class="btn btn-primary" name="botao" value="Consultar">Consultar</button>
                 </div>
+                <div class="col-sm">
+                    <button type="submit" class="btn btn-primary" name="botao" value="consulta_nome_comercial">Consulta por <b>nome comercial</b></button>
+                </div>
               </div>
         </form>
     </main>
 
-<?php if (@$_REQUEST['botao'] == "Consultar") { ?>
+<?php 
+if (@$_REQUEST['botao'] == "Consultar") 
+    { ?>
 
 <table width="95%" border="4" align="center">
   <tr bgcolor="moccasin ">
@@ -93,7 +98,7 @@
     {
         
     ?>    
-    <tr>
+    <tr tr bgcolor="moccasin">
       <th width="15%"><?php echo $coluna['nome_classe']; ?></th>
       <th width="15%"><?php echo $coluna['nome_medicamento']; ?></th>
       <th width="18%"><?php echo $coluna['interacao_com']; ?></th>
@@ -103,12 +108,62 @@
 
     <?php
     // Fim do laço While
-    } 
+    }
+
 ?>
 </table>
 <?php   
 }
-?>    
+?>   
+<?php 
+if (@$_REQUEST['botao'] == "consulta_nome_comercial") 
+    { ?>
+
+<table width="95%" border="4" align="center">
+  <tr bgcolor="moccasin ">
+    <th width="6%">Classe</th>
+    <th width="15%">Nome Comercial</th>
+    <th width="20%">Para quê serve?</th>
+    <th width="30%">Como usar:</th>
+  </tr>
+
+<?php
+
+    $nome_comercial = @$_POST['nome_medicamento'];
+
+     
+    $query = "SELECT *
+              FROM novaclasse 
+              WHERE id_nc > 0 ";
+    $query .= ($nome_comercial ? " AND nome_comercial LIKE '%$nome_comercial%' " : "");
+    
+    $query .= " ORDER by id_nc";
+    $result = mysqli_query($con, $query);
+
+    while ($coluna=mysqli_fetch_array($result)) 
+    {
+        
+    ?>    
+    <tr tr bgcolor="moccasin">
+      <th width="15%"><?php echo $coluna['nome_nova_classe']; ?></th>
+      <th width="15%"><?php echo $coluna['nome_comercial']; ?></th>
+      <th width="18%"><?php echo $coluna['para_que_serve']; ?></th>
+      <th width="27%"><?php echo $coluna['como_usar']; ?></th>
+
+    </tr>
+
+    <?php
+    // Fim do laço While 2 < < < < < 
+    }
+
+?>
+</table>
+<?php   
+}
+?>   
+
+
+
 
     <!-- Optional JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
