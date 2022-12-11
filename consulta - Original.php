@@ -30,14 +30,25 @@
                     <li class="nav-item">
                         <a class="nav-link " aria-current="page" href="index.html">Home</a>
                     </li>
-                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Consultar
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="cons_interacoes.html">Interações</a></li>
+                            <li><a class="dropdown-item" href="cons_medicamento.html">Posologia</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Novo login
+                            Relátorio/Cadastrar
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="rel_usuario.html">Usuário</a></li>
+                            <li><a class="dropdown-item " href="rel_medicamento.html">Medicamentos</a></li>
+                            <li><a class="dropdown-item " href="rel_interacoes.html">Interações</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
