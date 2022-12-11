@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <title>Cadastro novo usuário</title>
+  <title>Cadastro de Fármaco</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" contento="IE-edge">
   <meta name=viewport content="width-device-width, initial=scale=1.0">
   <link rel="stylesheet" href="style2.css">
 
   <?php include ('config.php');  
-    include('verifica.php')
+    include('verifica.php');
+    //Endereço: localhost/novoSistema/cadastroFarmaco.php
   ?>
 </head>
 
 <body>
     <main>
         <?php
+       
 include('funcao.php');
 
 if (@$_REQUEST['botao'] == "Gravar") 
@@ -40,7 +42,7 @@ if (@$_REQUEST['botao'] == "Gravar")
             }
         
         else {
-            echo "<script>alert('Cadastro não realizado');
+            echo "<script>alert('Falha ao cadastrar');
             top.location.href=cadastroFarmaco.php';</script>"; 
         }
         
