@@ -73,7 +73,7 @@
 if (@$_REQUEST['botao'] == "Consultar") 
     { ?>
 
-<table width="95%" border="4" align="center">
+<table width="95%" border="4" align="center"  bgcolor="white ">
   <tr bgcolor="moccasin ">
     <th width="6%">Classe medicamento: </th>
     <th width="15%">Nome do Medicamento:</th>
@@ -98,7 +98,7 @@ if (@$_REQUEST['botao'] == "Consultar")
     {
         
     ?>    
-    <tr tr bgcolor="moccasin">
+    <tr>
       <th width="15%"><?php echo $coluna['nome_classe']; ?></th>
       <th width="15%"><?php echo $coluna['nome_medicamento']; ?></th>
       <th width="18%"><?php echo $coluna['interacao_com']; ?></th>
@@ -144,7 +144,7 @@ if (@$_REQUEST['botao'] == "consulta_nome_comercial")
     {
         
     ?>    
-    <tr tr bgcolor="moccasin">
+    <tr tr bgcolor="white">
       <th width="15%"><?php echo $coluna['nome_nova_classe']; ?></th>
       <th width="15%"><?php echo $coluna['nome_comercial']; ?></th>
       <th width="18%"><?php echo $coluna['para_que_serve']; ?></th>
