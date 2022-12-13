@@ -74,7 +74,8 @@ if (@$_REQUEST['botao'] == "Consultar")
     { ?>
 
 <table width="95%" border="4" align="center"  bgcolor="white ">
-  <tr bgcolor="moccasin ">
+  <tr bgcolor="moccasin "
+  >
     <th width="6%">Classe medicamento: </th>
     <th width="15%">Nome do Medicamento:</th>
     <th width="20%">Interação medicamentosa: </th>

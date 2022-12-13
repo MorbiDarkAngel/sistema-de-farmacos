@@ -15,9 +15,7 @@
 </head>
 
 <body>
-<?php
-?>
-    <nav class="navbar navbar-expand-lg bg-light">
+   <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">LabHub</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -28,27 +26,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link " aria-current="page" href="index.php">Home</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    
+                    <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Consultar
+                            Novo login
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="consulta.php">Consulta de Interações</a></li>
-                           
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Relátorio/Cadastrar
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="rel_usuario.html">Usuário</a></li>
-                            <li><a class="dropdown-item" href="rel_medicamento.html">Medicamentos</a></li>
-                            <li><a class="dropdown-item" href="rel_interacoes.html">Interações</a></li>
+                            <li><a class="dropdown-item" href="login.php">Usuário</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
